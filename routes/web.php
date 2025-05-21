@@ -26,6 +26,7 @@ Route::view('/js1', 'js1');
 Route::view('/js2', 'js2');
 Route::view('/ets', 'ets');
 Route::view('/pertemuan2', 'pertemuan2');
+Route::view('/frontend', 'frontend');
 
 
 Route::get('dosen', [Link::class, 'index']);
