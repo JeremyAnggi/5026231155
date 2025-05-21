@@ -1,19 +1,23 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use Illuminate\Http\Request;
- 
-class link extends Controller
+
+class PegawaiController extends Controller
 {
-    public function helloworld(){
-    	return view('blog');
+    //
+    public function index($nama){
+     return "<h1>" . $nama . "</h1>";
     }
-    public function index(){
-        $nama = "Diki Alafarabi Hadi";
-        $umur = 35;
-        $alamat = "surabaya";
-        $matkul = ["Algoritma & Pemrograman","Kalkulus","Pemrograman Web"];
-        return view('biodata', ['nama'=>$nama, 'umur'=>$umur , 'alamat'=>$alamat, 'matkul'=>$matkul]);
+
+    public function formulir(){
+    	return view('formulir');
+    }
+
+    public function proses(Request $request){
+        $nama = $request->input('nama');
+     	$alamat = $request->input('alamat');
+        return "Nama : ".$nama."<br> Alamat : ".$alamat."<br> Aslinya : ". $request;
     }
 }

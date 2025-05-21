@@ -29,13 +29,17 @@ Route::view('/pertemuan2', 'pertemuan2');
 Route::view('/frontend', 'frontend');
 
 
+// Route dosen
 Route::get('dosen', [Link::class, 'index']);
 
+// Route pegawai
 Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
-Route::get('/formulir', [PegawaiController::class, 'formulir']);
-Route::post('/pegawai/proses', [PegawaiController::class, 'proses']);
 
-// route blog
+// Route formulir
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
+
+// Route blog
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
