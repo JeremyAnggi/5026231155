@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\link;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\ProcessorController;
+
+
 // use App\Http\Controllers\Pegawai2Controller;
 
 use App\Http\Controllers\BlogController;
@@ -46,20 +49,20 @@ Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
-
-
 //route CRUD
 Route::get('/pegawai', [PegawaiController::class, 'index']);
 Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah']);
-
-
 Route::post('/pegawai/store', [PegawaiController::class, 'store']);
-
 Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit']);	
-
-
 Route::post('/pegawai/update', [PegawaiController::class, 'update']);	
-
 Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
-
 Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
+
+//route pegawai
+Route::get('/processor', [ProcessorController::class, 'index']);
+Route::get('/processor/tambah', [ProcessorController::class, 'tambah']);
+Route::post('/processor/store', [ProcessorController::class, 'store']);
+Route::get('/processor/edit/{id}', [ProcessorController::class, 'edit']);	
+Route::post('/processor/update', [ProcessorController::class, 'update']);	
+Route::get('/processor/hapus/{id}', [ProcessorController::class, 'hapus']);
+Route::get('/processor/cari', [ProcessorController::class, 'cari']);
