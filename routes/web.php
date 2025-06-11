@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\link;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\ProcessorController;
+use App\Http\Controllers\KaryawanController;
 
 
 // use App\Http\Controllers\Pegawai2Controller;
@@ -58,7 +59,7 @@ Route::post('/pegawai/update', [PegawaiController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
 
-//route pegawai
+//route processor
 Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/processor/tambah', [ProcessorController::class, 'tambah']);
 Route::post('/processor/store', [ProcessorController::class, 'store']);
@@ -66,3 +67,11 @@ Route::get('/processor/edit/{id}', [ProcessorController::class, 'edit']);
 Route::post('/processor/update', [ProcessorController::class, 'update']);	
 Route::get('/processor/hapus/{id}', [ProcessorController::class, 'hapus']);
 Route::get('/processor/cari', [ProcessorController::class, 'cari']);
+
+Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::get('/karyawan/tambah', [KaryawanController::class, 'tambah']);
+Route::post('/karyawan/store', [KaryawanController::class, 'store']);
+Route::get('/karyawan/edit/{id}', [KaryawanController::class, 'edit']);
+Route::post('/karyawan/update', [KaryawanController::class, 'update']);
+Route::delete('/karyawan/hapus/{id}', [KaryawanController::class, 'hapus']);
+Route::get('/karyawan/cari', [KaryawanController::class, 'cari']);
